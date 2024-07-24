@@ -1,0 +1,40 @@
+renderer: x264
+default_transition: fade
+combine:
+ transition: nofade
+ inputs:
+  - render: 
+     renderer: copy
+     src: ./video1
+     name: my_video
+     from: 10s
+     duration: 12s
+  - overlay:
+
+      backgrond:
+        render: 
+         renderer: copy
+         src: ./video1
+         name: my_video
+         from: 10s
+         duration: 12s
+      foregraund:
+        render: 
+         renderer: copy
+         src: ./video1
+         name: my_video
+         from: 10s
+         duration: 12s
+    
+  - render: 
+     renderer: copy
+     src: https//:testvideo.com/video1
+     name: my_video
+     from: 10s
+     duration: 12s
+  - combine:
+      transition: nofade
+output: ./output1
+
+
+

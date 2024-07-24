@@ -1,0 +1,29 @@
+renderer: libx264
+default_transition: fade_in
+combine:
+  transition: fade_in
+  inputs:
+      - render: 
+          renderer: libx264
+          text:
+            duration: 2
+            value: "this is my text"
+            position: center
+            font_size: 60
+          src: "/home/davit/project/yaml-video/templates/3.png"
+          name: "my_video"
+          duration: "3s"
+
+      - render: 
+          renderer: libx264
+          text:
+            duration: 2
+            value: "second part my text"
+            location: center
+            font_size: 60
+          src: "/home/davit/project/yaml-video/templates/3.png"
+          name: "my_video"
+          duration: "5s"
+
+output: "/home/davit/output1.mp4"
+

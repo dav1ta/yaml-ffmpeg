@@ -1,0 +1,34 @@
+renderer: libx264
+default_transition: fade_in
+combine:
+  transition: fade_in
+  inputs:
+      - render: 
+          renderer: libvpx-vp9
+          text:
+            duration: 2
+            value: "this is my text"
+          src: "https://www.youtube.com/watch?v=emjQGe8EfEI"
+          name: "my_video"
+          from: "15s"
+          duration: "3s"
+
+          scale:
+            w: 304  # half of the original width
+            h: 540  # half of the original height   
+      - render: 
+          text:
+            duration: 2
+            value: "this is my text"
+            position: center
+          src: "https://www.youtube.com/watch?v=yju4zwKSriI"
+          name: "my_video"
+          from: "10s"
+          duration: "2s"
+          crop: 
+            w: 608  # width of the cropped area
+            h: 1080  # height of the cropped area
+            x: "(iw-ow)/2"  # x-position of the top-left corner of the cropped area, centered
+            y: "(ih-oh)/2"  # y-position of the top-left corner of the cropped area, centered    
+output: "/home/davit/output1.mp4"
+

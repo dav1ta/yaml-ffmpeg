@@ -1,0 +1,35 @@
+renderer: libx264
+default_transition: fade
+combine:
+  transition: nofade
+  inputs:
+    - render: 
+        src: https://www.youtube.com/watch?v=ctlSMvWVbVo
+        name: my_video
+        from: 10s
+        duration: 12s
+        aspect_ratio: 16/9
+    - combine:
+        renderer: copy
+        transition: fade
+        inputs:
+          - render: 
+              src: https://www.youtube.com/watch?v=ctlSMvWVbVo 
+              name: my_video
+              from: 15s
+              duration: 19s
+              aspect_ratio: 16/9
+          - render: 
+              renderer: libx264
+              src: https://www.youtube.com/watch?v=ctlSMvWVbVo 
+              name: my_video
+              from: 15s
+              duration: 10s
+              aspect_ratio: 16/9
+              overlay: 10:10
+    - render: 
+        src: /home/davit/d.mp4
+        name: my_video
+        from: 10s
+        duration: 12s
+output: /home/davit/output1.mp4

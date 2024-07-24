@@ -1,0 +1,11 @@
+renderer: libx264  # Renderer type
+default_transition: fade  # Default transition
+combine:
+  inputs:
+    - render: 
+        src: https://www.youtube.com/watch?v=ctlSMvWVbVo  # Source video
+        name: my_video  # Name of the video
+        from: 10s  # Start time of the video clip
+        duration: 12s  # Duration of the video clip
+
+output: /home/davit/output1.mp4  # Output file

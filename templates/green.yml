@@ -1,0 +1,55 @@
+renderer: libx264
+default_transition: fade_in
+combine:
+  transition: fade_in
+  inputs:
+
+      - render: 
+          renderer: libvpx-vp9
+          text:
+            duration: 2
+            value: "this is my text"
+          src: "https://www.youtube.com/watch?v=emjQGe8EfEI"
+          name: "my_video"
+          from: "1s"
+          duration: "3s"
+
+          remove_green: true 
+          scale:
+            w: 304  # half of the original width
+            h: 540  # half of the original height   
+
+      - overlay:
+        - render: 
+            renderer: libvpx-vp9
+            text:
+              duration: 2
+              value: "this is my text"
+            src: "https://www.youtube.com/watch?v=emjQGe8EfEI"
+            name: "my_video"
+            from: "1s"
+            duration: "3s"
+
+            remove_green: true 
+            scale:
+              w: 104  # half of the original width
+              h: 240  # half of the original height   
+
+
+        - render: 
+            renderer: libvpx-vp9
+            text:
+              duration: 2
+              value: "this is my text"
+            src: "https://www.youtube.com/watch?v=emjQGe8EfEI"
+            name: "my_video"
+            from: "1s"
+            duration: "3s"
+
+            remove_green: true 
+            scale:
+              w: 304  # half of the original width
+              h: 540  # half of the original height   
+output: "/home/davit/output1.mp4"
+
+
